@@ -2,23 +2,27 @@
   "name": "task-manager",
   "version": "0.0.1",
   "private": true,
+  "homepage": "https://luizrosalba.github.io/react-take-home-exercise/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "pnpm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "gh-pages": "^6.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
-    "typescript": "^4.6.0",
-    "vite": "^4.0.0",
     "@vitejs/plugin-react": "^3.0.0",
-    "tailwindcss": "^3.0.0",
+    "autoprefixer": "^10.0.0",
     "postcss": "^8.0.0",
-    "autoprefixer": "^10.0.0"
+    "tailwindcss": "^3.0.0",
+    "typescript": "^4.6.0",
+    "vite": "^4.0.0"
   }
 }
