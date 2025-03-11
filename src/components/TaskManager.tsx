@@ -9,7 +9,7 @@ const TaskManager = () => {
     { id: 2, title: "Clean the house", completed: true },
   ]);
   const [filter, setFilter] = useState("all");
-  const [newTask, setNewTask] = useState<string>();
+  const [newTask, setNewTask] = useState<string>("");
 
   // Intentional bug: The filter conditions are reversed.
   const filteredTasks = tasks.filter((task) => {
