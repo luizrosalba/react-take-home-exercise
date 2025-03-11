@@ -3,8 +3,8 @@ import { Task } from "./TaskManager";
 
 type TaskItemProps = {
   task: Task;
-  onDelete: (id: number)=> {};
-  onToggle: (id: number)=> {}
+  onDelete: (id: number)=> void;
+  onToggle: (id: number)=> void
 }
 const TaskItem = ({ task, onDelete, onToggle }: TaskItemProps) => {
   return (
