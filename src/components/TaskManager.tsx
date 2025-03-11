@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 
 import TaskItem from "./TaskItem";
+import { getInitialTasksFromLocalStorage, storeOnLocalStorage } from "../utils/localStorage";
 
 export type Task = { id: number, title: string, completed: boolean };
 const TaskManager = () => {
-  const [tasks, setTasks] = useState<Task[]>([
-    { id: 1, title: "Buy groceries", completed: false },
-    { id: 2, title: "Clean the house", completed: true },
-  ]);
+
+  const [tasks, setTasks] = useState<Task[]>(getInitialTasksFromLocalStorage());
   const [filter, setFilter] = useState("all");
   const [newTask, setNewTask] = useState<string>("");
 
@@ -28,15 +27,18 @@ const TaskManager = () => {
         title: newTask,
         completed: false,
       };
-      setTasks([...tasks, newTaskObj]);
+      const updatedTasks = [...tasks, newTaskObj]
+      storeOnLocalStorage({id: "storedTasks", value: updatedTasks})
+      setTasks(updatedTasks);
       setNewTask("");
     }
   };
 
   // Intentional bug: Directly mutating the tasks array when deleting.
   const handleDeleteTask = (id: number) => {
-      const newArray = tasks.filter(task => task.id !== id )
-      setTasks(newArray);
+      const updatedTasks = tasks.filter(task => task.id !== id )
+      setTasks(updatedTasks);
+      storeOnLocalStorage({id: "storedTasks", value: updatedTasks})
   };
 
   const toggleTaskCompletion = (id: number) => {
