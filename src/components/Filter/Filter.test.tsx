@@ -1,14 +1,13 @@
-import renderer from "react-test-renderer";
+import {render} from '@testing-library/react'
 import Filter from "./Filter"
 
-describe('Filter Snapshot', () => {  
+describe('Filter Test', () => {  
 
     it("Matches DOM Snapshot", () => {
         const filterMock = jest.fn()
-        const domTree = renderer.create(<Filter setFilter={filterMock}/>).toJSON();
+        const domTree = render(<Filter setFilter={filterMock}/>);
         expect(domTree).toMatchSnapshot();
       });
   
-   
   
   });
