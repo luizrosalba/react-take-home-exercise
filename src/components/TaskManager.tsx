@@ -2,8 +2,8 @@ import React, { useState } from "react";
 
 import TaskItem from "./TaskItem";
 import { getInitialTasksFromLocalStorage, storeOnLocalStorage } from "../utils/localStorage";
-import Button from "./Buttons/Button";
 import { findLastIndex } from "../utils/utils";
+import Filter from "./Filter/Filter";
 
 export type Task = { id: number, title: string, completed: boolean };
 const TaskManager = () => {
@@ -12,7 +12,6 @@ const TaskManager = () => {
   const [filter, setFilter] = useState("all");
   const [newTask, setNewTask] = useState<string>("");
 
-  // Intentional bug: The filter conditions are reversed.
   const filteredTasks = tasks.filter((task) => {
     if (filter === "completed") return task.completed === true;
     if (filter === "pending") return task.completed === false;
@@ -22,20 +21,19 @@ const TaskManager = () => {
   const handleAddTask = (e: React.FormEvent) => {
     e.preventDefault();
     if (newTask) {
-    if (newTask!.trim() === "") return;
-      const newTaskObj = {
-        id: findLastIndex(tasks) + 1,
-        title: newTask,
-        completed: false,
-      };
-      const updatedTasks = [...tasks, newTaskObj]
-      storeOnLocalStorage({id: "storedTasks", value: updatedTasks})
-      setTasks(updatedTasks);
-      setNewTask("");
-    }
+      if (newTask!.trim() === "") return;
+        const newTaskObj = {
+          id: findLastIndex(tasks) + 1,
+          title: newTask,
+          completed: false,
+        };
+        const updatedTasks = [...tasks, newTaskObj]
+        setTasks(updatedTasks);
+        storeOnLocalStorage({id: "storedTasks", value: updatedTasks})
+        setNewTask("");
+      }
   };
 
-  // Intentional bug: Directly mutating the tasks array when deleting.
   const handleDeleteTask = (id: number) => {
       const task = tasks.find(task => task.id === id )
       if (task)
@@ -75,21 +73,7 @@ const TaskManager = () => {
         </button>
       </form>
       <div className="flex justify-around mb-4">
-        <Button 
-          filter="all" 
-          title={"All"} 
-          setFilter={setFilter}
-        /> 
-        <Button 
-          filter="completed" 
-          title={"Completed"} 
-          setFilter={setFilter}
-        /> 
-        <Button 
-          filter="pending" 
-          title={"Pending"} 
-          setFilter={setFilter}
-        /> 
+        <Filter setFilter={setFilter}/>
       </div>
       <ul>
         {filteredTasks.map((task) => (
