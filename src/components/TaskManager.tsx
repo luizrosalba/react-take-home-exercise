@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import TaskItem from "./TaskItem";
 import { getInitialTasksFromLocalStorage, storeOnLocalStorage } from "../utils/localStorage";
+import Button from "./Buttons/Button";
 
 export type Task = { id: number, title: string, completed: boolean };
 const TaskManager = () => {
@@ -21,7 +22,6 @@ const TaskManager = () => {
     e.preventDefault();
     if (newTask) {
     if (newTask!.trim() === "") return;
-
       const newTaskObj = {
         id: tasks.length + 1,
         title: newTask,
@@ -36,9 +36,17 @@ const TaskManager = () => {
 
   // Intentional bug: Directly mutating the tasks array when deleting.
   const handleDeleteTask = (id: number) => {
-      const updatedTasks = tasks.filter(task => task.id !== id )
-      setTasks(updatedTasks);
-      storeOnLocalStorage({id: "storedTasks", value: updatedTasks})
+      const task = tasks.find(task => task.id === id )
+      if (task)
+      {      
+        const reponse = confirm(`Confirm to delete task: ${task?.title}`)
+        if (reponse) {
+          const updatedTasks = tasks.filter(task => task.id !== id )
+          setTasks(updatedTasks);
+          storeOnLocalStorage({id: "storedTasks", value: updatedTasks})
+  
+        }
+      }
   };
 
   const toggleTaskCompletion = (id: number) => {
@@ -66,18 +74,21 @@ const TaskManager = () => {
         </button>
       </form>
       <div className="flex justify-around mb-4">
-        <button onClick={() => setFilter("all")} className="text-gray-700">
-          All
-        </button>
-        <button
-          onClick={() => setFilter("completed")}
-          className="text-gray-700"
-        >
-          Completed
-        </button>
-        <button onClick={() => setFilter("pending")} className="text-gray-700">
-          Pending
-        </button>
+        <Button 
+          filter="all" 
+          title={"All"} 
+          setFilter={setFilter}
+        /> 
+        <Button 
+          filter="completed" 
+          title={"Completed"} 
+          setFilter={setFilter}
+        /> 
+        <Button 
+          filter="pending" 
+          title={"Pending"} 
+          setFilter={setFilter}
+        /> 
       </div>
       <ul>
         {filteredTasks.map((task) => (

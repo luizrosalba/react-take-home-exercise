@@ -1,5 +1,18 @@
 # React Take-Home Challenge: Task Manager App
 
+## Changes : 
+
+- Persistence 
+- CI/CD
+- **Persistence** - DONE 
+- **Improved UI/UX:** - DONE 
+  - Enhance the user interface with additional styling improvements or animations to improve user experience.
+  - Implement a confirmation dialog when deleting a task.
+- **Improved UI/UX:** - DONE 
+  - Deploy the app
+  - Create a CI/CD pipeline that will automatically deploy/release the app when changes were made.
+- **Unit Testing:**
+  - Write tests for key components using your preferred testing framework (e.g., Jest, React Testing Library).
 
 ## Deployed Url : 
 

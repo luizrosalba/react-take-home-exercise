@@ -8,7 +8,7 @@ function App() {
       <header className="text-center mb-4">
         <h1 className="text-3xl font-bold">Task Manager</h1>
       </header>
-
+    
       <TaskManager />
     </div>
   );
