@@ -1,4 +1,4 @@
-import { Task } from "../components/TaskManager";
+import { Task } from "../components/TaskManager/TaskManager";
 
 export const findLastIndex = (tasks: Task[]) => {
     if (tasks?.length === 0 ) return 0

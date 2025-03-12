@@ -1,4 +1,4 @@
-import { Task } from "../components/TaskManager";
+import { Task } from "../components/TaskManager/TaskManager";
 
 export const getInitialTasksFromLocalStorage = () => {
   const localStorageTasks = localStorage.getItem("storedTasks");

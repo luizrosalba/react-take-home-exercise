@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
-import TaskItem from "./TaskItem";
-import { getInitialTasksFromLocalStorage, storeOnLocalStorage } from "../utils/localStorage";
-import { findLastIndex } from "../utils/utils";
-import Filter from "./Filter/Filter";
+import TaskItem from "../TaskItem/TaskItem";
+import { getInitialTasksFromLocalStorage, storeOnLocalStorage } from "../../utils/localStorage";
+import { findLastIndex } from "../../utils/utils";
+import Filter from "../Filter/Filter";
 
 export type Task = { id: number, title: string, completed: boolean };
 const TaskManager = () => {

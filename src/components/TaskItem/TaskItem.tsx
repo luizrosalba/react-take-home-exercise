@@ -1,4 +1,4 @@
-import { Task } from "./TaskManager";
+import { Task } from "../TaskManager/TaskManager";
 
 type TaskItemProps = {
   task: Task;
@@ -9,6 +9,7 @@ const TaskItem = ({ task, onDelete, onToggle }: TaskItemProps) => {
   return (
     <li className="flex items-center justify-between border-b py-2">
       <span
+        data-testid="toggle-button"
         onClick={() => onToggle(task.id)}
         className={`cursor-pointer ${
           task.completed ? "line-through text-green-500" : "text-black"
@@ -19,6 +20,7 @@ const TaskItem = ({ task, onDelete, onToggle }: TaskItemProps) => {
 
       <button
         onClick={() => onDelete(task.id)}
+        data-testid="delete-button"
         style={{
           backgroundColor: "red",
           color: "white",
