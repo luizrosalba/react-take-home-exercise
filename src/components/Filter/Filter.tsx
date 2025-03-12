@@ -1,9 +1,8 @@
-import React from 'react'
 import Button from '../Buttons/Button'
 type Filter = {
     setFilter: () => void
 }
-export default function Filter({setFilter}) {
+export default function Filter({setFilter}: Filter) {
   return (
     <>
             <Button 
