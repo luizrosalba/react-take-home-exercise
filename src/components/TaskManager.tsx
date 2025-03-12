@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import TaskItem from "./TaskItem";
 import { getInitialTasksFromLocalStorage, storeOnLocalStorage } from "../utils/localStorage";
 import Button from "./Buttons/Button";
+import { findLastIndex } from "../utils/utils";
 
 export type Task = { id: number, title: string, completed: boolean };
 const TaskManager = () => {
@@ -23,7 +24,7 @@ const TaskManager = () => {
     if (newTask) {
     if (newTask!.trim() === "") return;
       const newTaskObj = {
-        id: tasks.length + 1,
+        id: findLastIndex(tasks) + 1,
         title: newTask,
         completed: false,
       };

@@ -14,5 +14,5 @@ export const getInitialTasksFromLocalStorage = () => {
   return initalValue
 }
 export const storeOnLocalStorage = ({id, value}: {id: string, value: Task[]}) => {
-    localStorage.setItem("id",JSON.stringify(value));
+    localStorage.setItem(`${id}`,JSON.stringify(value));
 }
