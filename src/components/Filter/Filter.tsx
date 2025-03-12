@@ -1,12 +1,14 @@
+import { Dispatch, SetStateAction } from 'react'
 import Button from '../Buttons/Button'
 type Filter = {
-    setFilter: () => void
+    setFilter: Dispatch<SetStateAction<string>>
 }
 export default function Filter({setFilter}: Filter) {
   return (
     <>
             <Button 
               filter="all" 
+              data-testid="all-button"
               title={"All"} 
               setFilter={setFilter}
             /> 
