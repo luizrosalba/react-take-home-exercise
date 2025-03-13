@@ -2,8 +2,8 @@ import { Task } from "../TaskManager/TaskManager";
 
 type TaskItemProps = {
   task: Task;
-  onDelete: (id: number)=> void;
-  onToggle: (id: number)=> void
+  onDelete: (id: number) => void;
+  onToggle: (id: number) => void
 }
 const TaskItem = ({ task, onDelete, onToggle }: TaskItemProps) => {
   return (
@@ -11,9 +11,8 @@ const TaskItem = ({ task, onDelete, onToggle }: TaskItemProps) => {
       <span
         data-testid="toggle-button"
         onClick={() => onToggle(task.id)}
-        className={`cursor-pointer ${
-          task.completed ? "line-through text-green-500" : "text-black"
-        }`}
+        className={`cursor-pointer ${task.completed ? "line-through text-green-500" : "text-black"
+          }`}
       >
         {task.title}
       </span>

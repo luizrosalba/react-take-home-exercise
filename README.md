@@ -11,7 +11,7 @@
 - **Improved UI/UX:** - DONE 
   - Deploy the app
   - Create a CI/CD pipeline that will automatically deploy/release the app when changes were made.
-- **Unit Testing:**
+- **Unit Testing:** DONE
   - Write tests for key components using your preferred testing framework (e.g., Jest, React Testing Library).
 
 ## Deployed Url : 
