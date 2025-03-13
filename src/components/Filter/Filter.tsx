@@ -24,7 +24,7 @@ export default function Filter({ currentFilter, setFilter }: Filter) {
       <Button
         filter="pending"
         title={"Pending"}
-        currentFilter={currentFilter} Zz
+        currentFilter={currentFilter}
         setFilter={setFilter}
       />
     </>

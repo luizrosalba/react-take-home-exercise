@@ -61,13 +61,14 @@ const TaskManager = () => {
     <div className="container mx-auto bg-white p-4 rounded shadow">
       <form onSubmit={handleAddTask} className="mb-4 flex">
         <input
+          data-testid="task-input"
           type="text"
           placeholder="New task..."
           value={newTask}
           onChange={(e) => setNewTask(e.target.value)}
           className="flex-grow border rounded-l py-2 px-1"
         />
-        <button type="submit" className="bg-blue-500 text-white px-4 rounded-r">
+        <button data-testid="task-add-button" type="submit" className="bg-blue-500 text-white px-4 rounded-r">
           Add
         </button>
       </form>
