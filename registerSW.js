@@ -1,0 +1,1 @@
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/react-take-home-exercise/sw.js', { scope: '/react-take-home-exercise/' })})}

@@ -1,0 +1,1 @@
+{"name":"Task Manager","short_name":"Tasks","start_url":"/react-take-home-exercise","display":"standalone","background_color":"#ffffff","lang":"en","scope":"/react-take-home-exercise/","description":"A great task manager","theme_color":"#ffffff","icons":[{"src":"/icon192.png","sizes":"192x192","type":"image/png"},{"src":"/icon.png","sizes":"512x512","type":"image/png"}]}
