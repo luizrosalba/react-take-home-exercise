@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import TaskManager from "./components/TaskManager/TaskManager";
+import { CiDark } from "react-icons/ci";
+import { MdDarkMode } from "react-icons/md";
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -22,7 +24,7 @@ function App() {
         <div className="flex justify-center align-center justify-around">
           <h1 className="text-3xl text-gray-900 dark:text-white font-bold">Task Manager</h1>
           <button onClick={toggleTheme} className="px-2 py-2 bg-blue-500 text-white rounded">
-            {isDarkMode ? 'Light' : 'Dark'}
+            {isDarkMode ? <MdDarkMode /> : <CiDark />}
           </button>
         </div>
       </header>
