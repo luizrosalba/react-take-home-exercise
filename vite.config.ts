@@ -20,15 +20,14 @@ export default defineConfig({
         theme_color: '#ffffff',
         background_color: '#ffffff',
         display: 'standalone',
-        start_url: '/react-take-home-exercise',
         icons: [
           {
-            src: '/icon192.png',
+            src: '/react-take-home-exercise/icon192.png',
             sizes: '192x192',
             type: 'image/png',
           },
           {
-            src: '/icon.png',
+            src: '/react-take-home-exercise/icon.png',
             sizes: '512x512',
             type: 'image/png',
           },
