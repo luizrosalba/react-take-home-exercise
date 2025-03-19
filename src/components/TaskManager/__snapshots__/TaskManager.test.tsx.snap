@@ -3,13 +3,13 @@
 exports[`TaskManager Test Matches DOM Snapshot 1`] = `
 <div>
   <div
-    class="container mx-auto bg-white p-4 rounded shadow"
+    class="container mx-auto bg-white dark:bg-gray-500 p-4 rounded shadow"
   >
     <form
       class="mb-4 flex"
     >
       <input
-        class="flex-grow border rounded-l py-2 px-1"
+        class="flex-grow border rounded-l py-2 px-1 text-black bg-white dark:bg-gray-700 text-white"
         data-testid="task-input"
         placeholder="New task..."
         type="text"
@@ -27,17 +27,17 @@ exports[`TaskManager Test Matches DOM Snapshot 1`] = `
       class="flex justify-around mb-4"
     >
       <button
-        class="px-4 rounded text-gray-700 bg-blue-500 text-white"
+        class="px-4 rounded text-gray-700 dark:text-white bg-blue-500 text-white"
       >
         All
       </button>
       <button
-        class="px-4 rounded text-gray-700"
+        class="px-4 rounded text-gray-700 dark:text-white"
       >
         Completed
       </button>
       <button
-        class="px-4 rounded text-gray-700"
+        class="px-4 rounded text-gray-700 dark:text-white"
       >
         Pending
       </button>
@@ -47,14 +47,15 @@ exports[`TaskManager Test Matches DOM Snapshot 1`] = `
         class="flex items-center justify-between border-b py-2"
       >
         <span
-          class="cursor-pointer text-black"
+          class="cursor-pointer text-gray-900 dark:text-white"
           data-testid="toggle-button"
         >
           Buy groceries
         </span>
         <button
+          class="px-2 py-2 bg-red-500 dark:bg-red-800 text-white rounded"
           data-testid="delete-button"
-          style="background-color: red; color: white; padding: 4px 8px; border-radius: 4px;"
+          style="color: white; padding: 4px 8px; border-radius: 4px;"
         >
           Delete
         </button>
@@ -69,8 +70,9 @@ exports[`TaskManager Test Matches DOM Snapshot 1`] = `
           Clean the house
         </span>
         <button
+          class="px-2 py-2 bg-red-500 dark:bg-red-800 text-white rounded"
           data-testid="delete-button"
-          style="background-color: red; color: white; padding: 4px 8px; border-radius: 4px;"
+          style="color: white; padding: 4px 8px; border-radius: 4px;"
         >
           Delete
         </button>

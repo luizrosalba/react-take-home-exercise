@@ -3,17 +3,17 @@
 exports[`Filter Test Matches DOM Snapshot 1`] = `
 <div>
   <button
-    class="px-4 rounded text-gray-700 bg-blue-500 text-white"
+    class="px-4 rounded text-gray-700 dark:text-white bg-blue-500 text-white"
   >
     All
   </button>
   <button
-    class="px-4 rounded text-gray-700"
+    class="px-4 rounded text-gray-700 dark:text-white"
   >
     Completed
   </button>
   <button
-    class="px-4 rounded text-gray-700"
+    class="px-4 rounded text-gray-700 dark:text-white"
   >
     Pending
   </button>

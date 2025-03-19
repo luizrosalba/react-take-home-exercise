@@ -12,8 +12,9 @@ exports[`Filter Test Matches DOM Snapshot 1`] = `
       Placeholder
     </span>
     <button
+      class="px-2 py-2 bg-red-500 dark:bg-red-800 text-white rounded"
       data-testid="delete-button"
-      style="background-color: red; color: white; padding: 4px 8px; border-radius: 4px;"
+      style="color: white; padding: 4px 8px; border-radius: 4px;"
     >
       Delete
     </button>
