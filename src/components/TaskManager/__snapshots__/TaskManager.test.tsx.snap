@@ -9,7 +9,7 @@ exports[`TaskManager Test Matches DOM Snapshot 1`] = `
       class="mb-4 flex"
     >
       <input
-        class="flex-grow border rounded-l py-2 px-1 text-black bg-white dark:bg-gray-700 text-white"
+        class="flex-grow border rounded-l py-2 px-1 text-black bg-white dark:bg-gray-700 dark:text-white"
         data-testid="task-input"
         placeholder="New task..."
         type="text"
