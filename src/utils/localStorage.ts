@@ -13,6 +13,16 @@ export const getInitialTasksFromLocalStorage = () => {
   ]
   return initalValue
 }
-export const storeOnLocalStorage = ({id, value}: {id: string, value: Task[]}) => {
-    localStorage.setItem(`${id}`,JSON.stringify(value));
+export const storeOnLocalStorage = ({ id, value }: { id: string, value: Task[] }) => {
+  localStorage.setItem(`${id}`, JSON.stringify(value));
+}
+
+export const getInitialDarkMode = () => {
+  const darkModeFromStorage = localStorage.getItem("dark-mode");
+  let isDarkMode = false
+  if (darkModeFromStorage) {
+    isDarkMode = JSON.parse(darkModeFromStorage)
+    return isDarkMode
+  }
+  return false
 }

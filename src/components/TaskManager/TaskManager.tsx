@@ -66,7 +66,7 @@ const TaskManager = () => {
           placeholder="New task..."
           value={newTask}
           onChange={(e) => setNewTask(e.target.value)}
-          className="flex-grow border rounded-l py-2 px-1 text-black bg-white dark:bg-gray-700 text-white"
+          className="flex-grow border rounded-l py-2 px-1 text-black bg-white dark:bg-gray-700 dark:text-white"
         />
         <button data-testid="task-add-button" type="submit" className="bg-blue-500 text-white px-4 rounded-r">
           Add

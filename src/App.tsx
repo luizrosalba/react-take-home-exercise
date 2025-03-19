@@ -2,9 +2,11 @@ import { useEffect, useState } from "react";
 import TaskManager from "./components/TaskManager/TaskManager";
 import { CiDark } from "react-icons/ci";
 import { MdDarkMode } from "react-icons/md";
+import { getInitialDarkMode } from "./utils/localStorage";
 
 function App() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const darkmode = getInitialDarkMode()
+  const [isDarkMode, setIsDarkMode] = useState(darkmode);
 
   useEffect(() => {
     const theme = isDarkMode ? 'dark' : 'light';
@@ -15,7 +17,9 @@ function App() {
   }, [isDarkMode]);
 
   const toggleTheme = () => {
+    const status = !isDarkMode
     setIsDarkMode(!isDarkMode);
+    localStorage.setItem("dark-mode", status.toString())
   };
 
   return (

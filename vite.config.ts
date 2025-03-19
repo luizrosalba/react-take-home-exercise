@@ -11,9 +11,7 @@ export default defineConfig({
       injectRegister: 'auto',
       devOptions: {
         enabled: true,
-        type: 'module',
       },
-      workbox: { clientsClaim: true, skipWaiting: true },
       manifest: {
         // Your manifest configuration here
         name: 'Task Manager',
@@ -22,16 +20,15 @@ export default defineConfig({
         theme_color: '#ffffff',
         background_color: '#ffffff',
         display: 'standalone',
-
-        start_url: '/',
+        start_url: '/react-take-home-exercise',
         icons: [
           {
-            src: '/react-take-home-exercise/icon192.png',
+            src: '/icon192.png',
             sizes: '192x192',
             type: 'image/png',
           },
           {
-            src: '/react-take-home-exercise/icon.png',
+            src: '/icon.png',
             sizes: '512x512',
             type: 'image/png',
           },
